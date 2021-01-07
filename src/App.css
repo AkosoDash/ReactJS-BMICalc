@@ -39,13 +39,13 @@
 
 @media (min-width: 576px) {
   .container{
-    width: 40%;
+    width: 60%;
   }
 }
 
 @media (min-width: 768px) { 
   .container{
-    width: 40%;
+    width: 60%;
   }
  }
 
@@ -57,7 +57,7 @@
 
 @media (min-width: 1200px) { 
   .container{
-    width: 70%;
+    width: 60%;
   }
 }
 
