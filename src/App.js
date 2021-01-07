@@ -11,7 +11,7 @@ class App extends React.Component{
       hasil: 0,
       keterangan: "Silahkan masukkan berat badan anda dalam satuan kilogram dan tinggi badan anda dalam satuan cm",
       warna: "info"
-    }  
+    }
   }
   beratBadan = (event) => {
     this.setState({berat: event.target.value});
@@ -21,7 +21,7 @@ class App extends React.Component{
   }
   hasil = () => {
     this.setState({hasil: this.state.berat / ((this.state.tinggi * this.state.tinggi)/10000)});
-
+    
     if (this.state.hasil <= 18) {
       return this.setState({keterangan: "Anda Kurus", warna: "warning"});
     }
@@ -39,19 +39,18 @@ class App extends React.Component{
     return (
       <div className="container text-center">
         <div className="row mt-4">
-          <div className="col"></div>
           <div className="col bg-dark">
             <h5 className="fw-bold p-4 putih">BMI Calculator</h5>
             <div class="mb-3 row">
-              <label for="inputPassword" class="col-sm-2 col-form-label putih">Berat</label>
+              <label for="inputPassword" class="col-sm-2 col-form-label putih text-start">Berat</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" value={this.state.berat} onChange={this.beratBadan} />
+                <input type="number" class="form-control" placeholder="Masukkan dalam satuan kg" onChange={this.beratBadan} />
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="inputPassword" class="col-sm-2 col-form-label putih">Tinggi</label>
+              <label for="inputPassword" class="col-sm-2 col-form-label putih text-start">Tinggi</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" value={this.state.tinggi} onChange={this.tinggiBadan} />
+                <input type="number" class="form-control" placeholder="Masukkan dalam satuan cm" onChange={this.tinggiBadan} />
               </div>
             </div>
             <div className="row pt-4 mb-4">
@@ -60,16 +59,13 @@ class App extends React.Component{
               </div>
             </div>
             <div className="row p-2 mb-2">
-              <input className="form-control text-center" readOnly value={this.state.hasil}></input>
-            </div>
-            <div className="row p-2 mb-2">
             <div className={"alert alert-" + this.state.warna}><p>{this.state.keterangan}</p></div>
             </div>
           </div>
-          <div className="col"></div>
+          
         </div>
       </div>
-    );
+    )
   }
 }
 
